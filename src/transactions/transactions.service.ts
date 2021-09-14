@@ -1,15 +1,22 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/sequelize';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { UpdateTransactionDto } from './dto/update-transaction.dto';
+import { Transaction } from './entities/transaction.entity';
 
 @Injectable()
 export class TransactionsService {
+  constructor(
+    @InjectModel(Transaction)
+    private readonly transactionModel: typeof Transaction,
+  ) {}
+
   create(createTransactionDto: CreateTransactionDto) {
-    return 'This action adds a new transaction';
+    return this.transactionModel.create(createTransactionDto);
   }
 
   findAll() {
-    return `This action returns all transactions`;
+    return this.transactionModel.findAll();
   }
 
   findOne(id: number) {
