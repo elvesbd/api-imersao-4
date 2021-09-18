@@ -1,16 +1,16 @@
+import { ReportsModule } from './reports/reports.module';
+import { Account } from './accounts/entities/account.entity';
+import { AccountsModule } from './accounts/accounts.module';
+import { Transaction } from './transactions/entities/transaction.entity';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TransactionsModule } from './transactions/transactions.module';
-import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule } from '@nestjs/config';
-import { Transaction } from './transactions/entities/transaction.entity';
-import { AccountsModule } from './accounts/accounts.module';
-import { Account } from './accounts/entities/account.entity';
+import { SequelizeModule } from '@nestjs/sequelize';
 import { CommonModule } from './common/common.module';
 import { AuthModule } from './auth/auth.module';
 import { TenantModule } from './tenant/tenant.module';
-import { ReportsModule } from './reports/reports.module';
 
 @Module({
   imports: [
