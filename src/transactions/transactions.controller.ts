@@ -31,8 +31,6 @@ export class TransactionsController {
 
   @Get()
   findAll(@Req() req) {
-    console.log(this.tenantService.tenant);
-    console.log(req.user);
     return this.transactionsService.findAll();
   }
 
