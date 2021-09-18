@@ -20,7 +20,7 @@ import { TenantService } from '../tenant/tenant/tenant.service';
 @Controller('transactions')
 export class TransactionsController {
   constructor(
-    private readonly tenanService: TenantService,
+    private readonly tenantService: TenantService,
     private readonly transactionsService: TransactionsService,
   ) {}
 
@@ -31,7 +31,7 @@ export class TransactionsController {
 
   @Get()
   findAll(@Req() req) {
-    console.log(this.tenanService.tenant);
+    console.log(this.tenantService.tenant);
     console.log(req.user);
     return this.transactionsService.findAll();
   }

@@ -4,6 +4,7 @@ import {
   IsString,
   MaxLength,
   IsIn,
+  IsNumber,
 } from 'class-validator';
 import {
   TransactionCategory,
@@ -31,7 +32,7 @@ export class CreateTransactionDto {
   @IsNotEmpty()
   category: TransactionCategory;
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
   amount: number;
 
